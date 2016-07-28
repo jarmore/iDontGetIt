@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/student_module_main"
+    tools:context="com.example.james.idontgetit.student_module_main">
+    <TextView
+        android:text="@string/current_topic"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/black"
+        android:id="@+id/topic_selected" />
+    <Button
+        android:onClick="requestTopic"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next_topic"
+        android:id="@+id/button_next_topic"
+        android:layout_below="@+id/topic_selected"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <ImageButton
+        android:onClick="iDontGetIt"
+        android:paddingTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:id="@+id/button_dontgetit"
+        android:src="@drawable/imagebutton"
+        android:background="@color/student_module_main"
+        android:contentDescription="@string/app_name"
+        android:layout_below="@+id/button_next_topic"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/ratingbar_description"
+        android:id="@+id/textView_ratingbar"
+        android:layout_below="@+id/button_dontgetit"
+        android:layout_centerHorizontal="true" />
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_below="@+id/textView_ratingbar"
+        android:layout_centerHorizontal="true" />
+    <Button
+        android:onClick="submitRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_rating"
+        android:id="@+id/button_submitRating"
+        android:layout_below="@+id/ratingBar"
+        android:layout_alignLeft="@+id/textView_ratingbar"
+        android:layout_alignStart="@+id/textView_ratingbar"
+        android:layout_alignRight="@+id/textView_ratingbar"
+        android:layout_alignEnd="@+id/textView_ratingbar" />
+    <Button
+        android:onClick="missunderstanding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_missunderstood_topics"
+        android:id="@+id/button_view_missunderstood_topics"
+        android:layout_below="@+id/button_submitRating"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>
