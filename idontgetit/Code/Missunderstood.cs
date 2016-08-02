@@ -25,13 +25,30 @@ namespace idontgetit
 
             ListView listView = FindViewById<ListView>(Resource.Id.listView);
 
+            Button btnUnderstood = FindViewById<Button>(Resource.Id.understood_button);
+            btnUnderstood.Click += BtnUnderstood_Click;
+
+
             // Create list of missunderstood topics here 
             DBRepository db = new DBRepository();
-            // TODO - This has to be changed from the topics table to a mimssunderstood topics table
-            topics = db.GetAllTopics();
+            topics = db.GetAllMissunderstoodTopics();
             listView.SetAdapter(new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, topics));
             listView.ItemClick += ListView_ItemClick;
             
+        }
+
+        private void BtnUnderstood_Click(object sender, EventArgs e)
+        {
+            DBRepository db = new DBRepository();
+            if (currentSelectedTopic != -1)
+            {
+                db.removeMissunderstoodTopic(currentSelectedTopic + 1);
+               // SetContentView(Resource.Layout.activity_missunderstood);
+            }
+            else
+            {
+                Toast.MakeText(this, "Please select a topic before trying to understand it.", ToastLength.Short).Show();
+            }
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

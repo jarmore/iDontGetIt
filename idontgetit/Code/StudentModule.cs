@@ -58,12 +58,11 @@ namespace idontgetit
 
         private void BtnRequestTopic_Click(object sender, EventArgs e)
         {
-            topics = db.GetAllTopics();
-            currentSelectedTopic++;
-
             TextView currentSelected = FindViewById<TextView>(Resource.Id.topic_selected);
             try
             {
+                topics = db.GetAllTopics();
+                currentSelectedTopic++;
                 currentSelected.Text = topics[currentSelectedTopic];
             }
             catch (Exception ex)

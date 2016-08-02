@@ -108,6 +108,41 @@ namespace idontgetit.ORM
             return topics;
         }
 
+        // Code to retrieve all the records 
+        public List<string> GetAllMissunderstoodTopics()
+        {
+            List<string> topics = new List<string>();
+            var db = new SQLiteConnection(dbPath);
+            string output = "";
+            output += "Retrieving the data using ORM...";
+            var table = db.Table<TopicsNotUnderstood>();
+            foreach (var item in table)
+            {
+                output += "\n" + item.id + "...." + item.topic;
+                topics.Add(item.topic);
+            }
+            Log.Info("devInfo", output);
+            return topics;
+        }
+
+        public string removeTopic(int id)
+        {
+            var db = new SQLiteConnection(dbPath);
+            var item = db.Get<Topics>(id);
+            db.Delete(item);
+            return "Topic removed.";
+        }
+
+        public string removeMissunderstoodTopic(int id)
+        {
+            // TODO Just have to make this sql command (Will probably have to make it search by name instead of using the id) work properly
+            // By using another sql command that finds math and returns the id of math to this method
+            var db = new SQLiteConnection(dbPath);
+            var item = db.Get<TopicsNotUnderstood>(id);
+            db.Delete(item);
+            return "Topic removed.";
+        }
+
 
         // Code to retrieve entry by id 
         //public string getEntryById(int id)
