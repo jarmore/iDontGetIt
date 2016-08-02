@@ -134,26 +134,29 @@ namespace idontgetit
 			// aapt resource value: 0x7f080008
 			public const int button_next_topic = 2131230728;
 			
-			// aapt resource value: 0x7f080015
-			public const int button_student_module = 2131230741;
+			// aapt resource value: 0x7f080016
+			public const int button_student_module = 2131230742;
 			
 			// aapt resource value: 0x7f08000c
 			public const int button_submitRating = 2131230732;
 			
-			// aapt resource value: 0x7f080014
-			public const int button_teacher_module = 2131230740;
+			// aapt resource value: 0x7f080015
+			public const int button_teacher_module = 2131230741;
 			
-			// aapt resource value: 0x7f080011
-			public const int button_viewStatistics = 2131230737;
+			// aapt resource value: 0x7f080012
+			public const int button_viewStatistics = 2131230738;
 			
 			// aapt resource value: 0x7f08000d
 			public const int button_view_missunderstood_topics = 2131230733;
 			
-			// aapt resource value: 0x7f08000f
-			public const int editText = 2131230735;
+			// aapt resource value: 0x7f080011
+			public const int editText = 2131230737;
 			
-			// aapt resource value: 0x7f080013
-			public const int imageView = 2131230739;
+			// aapt resource value: 0x7f08000f
+			public const int editTopicToAdd = 2131230735;
+			
+			// aapt resource value: 0x7f080014
+			public const int imageView = 2131230740;
 			
 			// aapt resource value: 0x7f080000
 			public const int listView = 2131230720;
@@ -164,17 +167,17 @@ namespace idontgetit
 			// aapt resource value: 0x7f080005
 			public const int listView_right = 2131230725;
 			
-			// aapt resource value: 0x7f080016
-			public const int list_display = 2131230742;
+			// aapt resource value: 0x7f080017
+			public const int list_display = 2131230743;
 			
-			// aapt resource value: 0x7f080012
-			public const int module_select_title = 2131230738;
+			// aapt resource value: 0x7f080013
+			public const int module_select_title = 2131230739;
 			
 			// aapt resource value: 0x7f08000b
 			public const int ratingBar = 2131230731;
 			
-			// aapt resource value: 0x7f080017
-			public const int return_to_module_select = 2131230743;
+			// aapt resource value: 0x7f080018
+			public const int return_to_module_select = 2131230744;
 			
 			// aapt resource value: 0x7f080001
 			public const int search_button = 2131230721;

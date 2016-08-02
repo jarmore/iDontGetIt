@@ -43,23 +43,30 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
+    <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="Missunderstood.cs" />
+    <Compile Include="Code\MainActivity.cs" />
+    <Compile Include="Code\Missunderstood.cs" />
+    <Compile Include="ORM\DBRepository.cs" />
+    <Compile Include="ORM\TopicsNotUnderstood.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Statistics.cs" />
-    <Compile Include="StudentModule.cs" />
-    <Compile Include="TeacherModule.cs" />
+    <Compile Include="ORM\SQLite.cs" />
+    <Compile Include="ORM\SQLiteAsync.cs" />
+    <Compile Include="Code\Statistics.cs" />
+    <Compile Include="Code\StudentModule.cs" />
+    <Compile Include="Code\TeacherModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
+    <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
@@ -102,7 +109,9 @@
     <AndroidResource Include="Resources\values\dimens.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_teacher_module.axml" />
+    <AndroidResource Include="Resources\layout\activity_teacher_module.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_missunderstood.axml" />

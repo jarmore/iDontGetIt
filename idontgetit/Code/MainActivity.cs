@@ -5,7 +5,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-
+using idontgetit.ORM;
+using Android.Util;
 
 namespace idontgetit
 {
@@ -18,6 +19,12 @@ namespace idontgetit
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            DBRepository dbr = new DBRepository();
+            var result = dbr.CreateDB();
+
+            Log.Info("devInfo", result);
+            //Toast.MakeText(this, result, ToastLength.Short).Show();
+
         }
 
         [Java.Interop.Export("studentModule")]
