@@ -19,13 +19,13 @@ namespace idontgetit.ORM
             return output;
         }
 
-        // Code to create the table
-        public string CreateTable()
+        // Code to create the topic Table
+        public string CreateTopicTable()
         {
             try
             {
                 var db = new SQLiteConnection(dbPath);
-                db.CreateTable<TopicsNotUnderstood>();
+                db.CreateTable<Topics>();
                 string result = "Table Created successfully";
                 return result;
             }
@@ -42,7 +42,7 @@ namespace idontgetit.ORM
             {
                 var db = new SQLiteConnection(dbPath);
 
-                TopicsNotUnderstood item = new TopicsNotUnderstood();
+                Topics item = new Topics();
                 item.topic = topic;
                 db.Insert(item);
                 return "Record Added...";
@@ -60,7 +60,7 @@ namespace idontgetit.ORM
             var db = new SQLiteConnection(dbPath);
             string output = "";
             output += "Retrieving the data using ORM...";
-            var table = db.Table<TopicsNotUnderstood>();
+            var table = db.Table<Topics>();
             foreach (var item in table)
             {
                 output += "\n" + item.id + "...." + item.topic;

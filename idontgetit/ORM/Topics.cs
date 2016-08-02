@@ -6,7 +6,7 @@ using SQLite;
 namespace idontgetit.ORM
 {
     [Table("TopicsNotunderstood")]
-    public class TopicsNotUnderstood
+    public class Topics
     {
         [PrimaryKey,AutoIncrement,Column("_id")]
         public int id { get; set; }

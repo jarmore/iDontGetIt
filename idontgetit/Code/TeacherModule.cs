@@ -34,7 +34,7 @@ namespace idontgetit
         private void BtnInsertTopic_Click(object sender, EventArgs e)
         {
             DBRepository dbr = new DBRepository();
-            var result = dbr.CreateTable();
+            var result = dbr.CreateTopicTable();
             Toast.MakeText(this, result, ToastLength.Short).Show();
             Log.Info("devInfo", result);
 
