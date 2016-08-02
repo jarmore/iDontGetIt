@@ -3,6 +3,8 @@ using System;
 using System.Data;
 using System.IO;
 using SQLite;
+using Android.Util;
+using System.Collections.Generic;
 
 namespace idontgetit.ORM
 {
@@ -35,6 +37,22 @@ namespace idontgetit.ORM
             }
         }
 
+        // Code to create the topicsNotUnderstoodTable Table
+        public string CreateTopicsNotUnderstoodTable()
+        {
+            try
+            {
+                var db = new SQLiteConnection(dbPath);
+                db.CreateTable<TopicsNotUnderstood>();
+                string result = "Table Created successfully";
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return "Error :  " + ex.Message;
+            }
+        }
+
         // Code to insert topic into table 
         public string insertTopic(string topic)
         {
@@ -54,9 +72,29 @@ namespace idontgetit.ORM
             }
         }
 
-        // Code to retrieve all the records 
-        public string GetAllRecords()
+        // Code to insert topic into table 
+        public string insertTopicNotUnderstood(string topic)
         {
+            try
+            {
+                var db = new SQLiteConnection(dbPath);
+
+                TopicsNotUnderstood item = new TopicsNotUnderstood();
+                item.topic = topic;
+                db.Insert(item);
+                return "Record Added...";
+            }
+            catch (Exception ex)
+            {
+
+                return "Error : " + ex.Message;
+            }
+        }
+
+        // Code to retrieve all the records 
+        public List<string> GetAllTopics()
+        {
+            List<string> topics = new List<string>();
             var db = new SQLiteConnection(dbPath);
             string output = "";
             output += "Retrieving the data using ORM...";
@@ -64,8 +102,10 @@ namespace idontgetit.ORM
             foreach (var item in table)
             {
                 output += "\n" + item.id + "...." + item.topic;
+                topics.Add(item.topic);
             }
-            return output;
+            Log.Info("devInfo", output);
+            return topics;
         }
 
 

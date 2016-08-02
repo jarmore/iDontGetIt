@@ -5,8 +5,8 @@ using SQLite;
 
 namespace idontgetit.ORM
 {
-    [Table("Topics")]
-    public class Topics
+    [Table("TopicsNotunderstood")]
+    public class TopicsNotUnderstood
     {
         [PrimaryKey,AutoIncrement,Column("_id")]
         public int id { get; set; }

@@ -35,8 +35,8 @@
         android:text="@string/insert"
         android:id="@+id/button_insert"
         android:layout_below="@+id/textView2"
-        android:layout_toRightOf="@+id/editText"
-        android:layout_toEndOf="@+id/editText" />
+        android:layout_toRightOf="@+id/editTopicToAdd"
+        android:layout_toEndOf="@+id/editTopicToAdd" />
     <Button
         android:onClick="viewStatistics"
         android:layout_width="wrap_content"

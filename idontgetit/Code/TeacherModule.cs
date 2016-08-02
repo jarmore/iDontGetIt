@@ -42,7 +42,7 @@ namespace idontgetit
             if(topicToAdd.Text != "")
             {
                 dbr.insertTopic(topicToAdd.Text);
-                Toast.MakeText(this, "Topic: " + topicToAdd.Text + "Has been added successfully to the database", ToastLength.Short).Show();
+                Toast.MakeText(this, "Topic: " + topicToAdd.Text + " has been added successfully to the database", ToastLength.Short).Show();
 
             }
             else

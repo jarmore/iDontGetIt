@@ -21,29 +21,17 @@
         android:layout_marginTop="10dp"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:text="@string/search"
-        android:id="@+id/search_button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="71dp" />
-    <Button
-        android:layout_marginTop="10dp"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
         android:text="@string/understood"
         android:id="@+id/understood_button"
-        android:layout_below="@+id/listView"
-        android:layout_alignRight="@+id/listView"
-        android:layout_alignEnd="@+id/listView" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <Button
         android:onClick="back"
         android:layout_width="135dp"
-        android:layout_marginRight="110dp"
         android:layout_height="wrap_content"
         android:text="@string/back"
         android:id="@+id/back_button"
-        android:layout_below="@+id/understood_button"
-        android:layout_alignRight="@+id/understood_button"
-        android:layout_alignEnd="@+id/understood_button" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
 </RelativeLayout>

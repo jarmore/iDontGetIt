@@ -9,17 +9,36 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using idontgetit.ORM;
 
 namespace idontgetit
 {
     [Activity(Label = "Missunderstood")]
     public class Missunderstood : Activity
     {
+        public List<string> topics;
+        int currentSelectedTopic = -1;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_missunderstood);
-            // Create your application here
+
+            ListView listView = FindViewById<ListView>(Resource.Id.listView);
+
+            // Create list of missunderstood topics here 
+            DBRepository db = new DBRepository();
+            // TODO - This has to be changed from the topics table to a mimssunderstood topics table
+            topics = db.GetAllTopics();
+            listView.SetAdapter(new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, topics));
+            listView.ItemClick += ListView_ItemClick;
+            
+        }
+
+        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var t = topics[e.Position];
+            Toast.MakeText(this, t.ToString() + " is currently selected", Android.Widget.ToastLength.Short).Show();
+            currentSelectedTopic = e.Position;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
